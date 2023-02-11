@@ -1,0 +1,82 @@
+
+body {
+    background-color: rgb(0, 0, 0);
+}
+.texto1{
+    font-size: 40px;
+    padding: 30px;
+    color: white;
+}
+
+.titulo{
+    padding-left:20px;
+}
+p {
+    padding-left: 30px;
+    font-size: 20px;
+    color:white;
+}
+.tituloB{
+    padding-left: 14px;
+    font-size: 20px;
+    font-weight: 700;
+}
+nav {
+    height: 75px;
+}
+.navbar-item{
+    padding-top: 10px;
+    padding-bottom:12px;
+}
+.navbar-brand{
+    max-width: 80%;
+}
+.slider-item {
+    height: 500px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+}
+.card-image img{
+    width: 200px;
+}
+.image.is-16by9 {
+    padding-top: 56.25%;
+    height: 350px;
+}
+.footer{
+    background-color: rgb(28, 30, 31);
+    font-size: 20px;
+}
+.card-content {
+    padding: 1.5rem;
+    background-color: rgb(17, 17, 17);
+}
+.item__title{
+    color: white;
+}
+.item__description{
+    color: white;
+}
+.footer strong {
+    color: white;
+}
+.slider-pagination {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: .5rem 1rem;
+    text-align: center;
+}
+.navbar-item img {
+    max-height: 3.95rem;
+}
+.subtitle{
+    padding-top:15px;
+}
