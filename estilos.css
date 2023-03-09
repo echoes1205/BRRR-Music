@@ -80,3 +80,29 @@ nav {
 .subtitle{
     padding-top:15px;
 }
+.iniciarSesion {
+    color: white;
+    font-size: 40px;
+    padding-top: 45px;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+.columns:last-child {
+    margin-top: -550px;
+    background-color: transparent;
+}
+.is-primary.input, .is-primary.textarea {
+    border-color: #6420e3;
+    border-width: 2px;
+}
+.input, .select select, .textarea {
+    background-color: #fff;
+    border-color: #dbdbdb;
+    border-radius: 14px;
+    color: #363636;
+}
+.column {
+    padding: 20px;
+}
