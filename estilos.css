@@ -90,7 +90,7 @@ nav {
 }
 
 .columns:last-child {
-    margin-top: -550px;
+    margin-top: -310px;
     background-color: transparent;
 }
 .is-primary.input, .is-primary.textarea {
@@ -105,4 +105,8 @@ nav {
 }
 .column {
     padding: 20px;
+}
+.has-text-primary {
+    color: #5f0dca!important;
+    pointer-events: ;
 }
