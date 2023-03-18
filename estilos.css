@@ -1,7 +1,11 @@
+html {
+    background-color: rgb(0, 0, 0);
 
+}
 body {
     background-color: rgb(0, 0, 0);
 }
+
 .texto1{
     font-size: 40px;
     padding: 30px;
@@ -49,6 +53,12 @@ nav {
 .footer{
     background-color: rgb(28, 30, 31);
     font-size: 20px;
+    display: flex;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    align-content: flex-end;
+    justify-content: center;
+    align-items: center;
 }
 .card-content {
     padding: 1.5rem;
@@ -80,7 +90,7 @@ nav {
 .subtitle{
     padding-top:15px;
 }
-.iniciarSesion {
+.tituloPag {
     color: white;
     font-size: 40px;
     padding-top: 45px;
@@ -108,5 +118,18 @@ nav {
 }
 .has-text-primary {
     color: #5f0dca!important;
-    pointer-events: ;
+}
+.columna {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 20px;
+    width: 400px;
+}
+.nosotrosTexto{
+    padding-top: 35px;
+    padding-left: 30px;
+    font-size: 17px;
+    color:white;
+
 }
