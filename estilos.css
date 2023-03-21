@@ -58,7 +58,7 @@ nav {
     padding-top: 40px;
     align-content: flex-end;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
 }
 .card-content {
     padding: 1.5rem;
