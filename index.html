@@ -1,3 +1,21 @@
+<?php
+  session_start();
+
+  require 'database.php';
+
+  if (isset($_SESSION['user_id'])) {
+    $records = $conn->prepare('SELECT id, email, password FROM users WHERE id = :id');
+    $records->bindParam(':id', $_SESSION['user_id']);
+    $records->execute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
+
+    $user = null;
+
+    if (count($results) > 0) {
+      $user = $results;
+    }
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,11 +35,11 @@
 <header>
   <nav class="navbar is-black" role="navigation" aria-label="main navigation">
     <div class="navbar-brand ">
-      <a class="navbar-item" href="index.html">
+      <a class="navbar-item" href="index.php">
         <img src="logobrrr.png" width="35px" height="140px">
         <p class="tituloB"> BRRR Music</p>
       </a>
-
+    <?php if(!empty($user)): ?>
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -31,11 +49,47 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item" href="nosotros.html">
+        <a class="navbar-item" href="nosotros.php">
           Nosotros
         </a>
 
-        <a class="navbar-item" href="contacto.html">
+        <a class="navbar-item" href="contacto.php">
+          Contacto
+        </a>
+		
+        <a class="navbar-item" href="inicio.html">
+          Inicio
+        </a>
+		
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-dark" href="logout.php">
+              Cerrar Sesion
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    <?php else: ?>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="nosotros.php">
+          Nosotros
+        </a>
+
+        <a class="navbar-item" href="contacto.php">
           Contacto
         </a>
       </div>
@@ -43,10 +97,10 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button is-dark" href="registro.html">
+            <a class="button is-dark" href="signup.php">
               Registro
             </a>
-            <a class="button is-black" href="login.html">
+            <a class="button is-black" href="login.php">
               Inicio de sesión
             </a>
           </div>
@@ -168,5 +222,6 @@
       </p>
     </div>
   </footer>
+      <?php endif; ?>
 </body>
 </html>

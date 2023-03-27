@@ -2,7 +2,7 @@
 
 $server = 'localhost';
 $username = 'root';
-$password = '2003183818';
+$password = 'Cesar2003@';
 $database = 'php_login_database';
 
 try {
