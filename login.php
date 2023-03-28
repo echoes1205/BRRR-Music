@@ -19,7 +19,7 @@
       $_SESSION['user_id'] = $results['id'];
       header("Location: inicio.html");
     } else {
-      $message = 'Sorry, those credentials do not match';
+      $message = 'Las credenciales son inválidas';
     }
   }
 
@@ -72,6 +72,9 @@
                         <a class="button is-dark" href="signup.php">
                             Registro
                         </a>
+                        <a class="button is-black" href="login.php">
+                            Inicio de sesión
+                        </a>
                     </div>
                 </div>
             </div>
@@ -98,10 +101,10 @@
                 </div>
                 
                 <div class="column">
-                    <input type="submit" value="Submit" class="button is-primary is-fullwidth is-danger">
+                    <input type="submit" value="Entrar" class="button is-primary is-fullwidth is-danger">
                 </div>
                 <div class="has-text-centered">
-                    <p class="is-size-7"> ¿No tienes una cuenta? <a href="registro.php" class="has-text-primary">Regístrate.
+                    <p class="is-size-7"> ¿No tienes una cuenta? <a href="signup.php" class="has-text-primary">Regístrate.
 
                         </a>
                     </p>

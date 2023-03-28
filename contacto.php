@@ -1,9 +1,9 @@
 <?php
-  session_start();
+session_start();
 
-  require 'database.php';
+require 'database.php';
 
-  if (isset($_SESSION['user_id'])) {
+if (isset($_SESSION['user_id'])) {
     $records = $conn->prepare('SELECT id, email, password FROM users WHERE id = :id');
     $records->bindParam(':id', $_SESSION['user_id']);
     $records->execute();
@@ -12,9 +12,9 @@
     $user = null;
 
     if (count($results) > 0) {
-      $user = $results;
+        $user = $results;
     }
-  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,13 +38,57 @@
                 <img src="logobrrr.png" width="35px" height="140px">
                 <p class="tituloB"> BRRR Music</p>
             </a>
-			<?php if(!empty($user)): ?>  
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
+            <?php if (!empty($user)): ?>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="inicio.html">
+                        Inicio
+                    </a>
+                    <a class="navbar-item" href="nosotros.php">
+                        Nosotros
+                    </a>
+
+                    <a class="navbar-item" href="contacto.php">
+                        Contacto
+                    </a>
+                    <a class="navbar-item" href="noticias.html">
+                        Noticias
+                    </a>
+
+                </div>
+
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-dark" href="logout.php">
+                                Cerrar sesión
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <body>
+        <h1 class="tituloPag">Contacto</h1>
+
+    <?php else: ?>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
         </div>
 
         <div id="navbarBasicExample" class="navbar-menu">
@@ -70,17 +114,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </nav>
-</header>
 
-<body>
-    <h1 class="tituloPag">Contacto</h1>
-
-			<?php else: ?> 
-  
-    
-			<?php endif; ?>
+        <?php endif; ?>
 </body>
 
 </html>

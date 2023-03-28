@@ -6,17 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
-    <script defer src="script.js"></script>
+    <script defer src="scriptMusic"></script>
+    <script defer src="script"></script>
+    <link href="music.css" rel="stylesheet">
     <link href="estilos.css" rel="stylesheet">
-
 </head>
 
 <header>
     <nav class="navbar is-black" role="navigation" aria-label="main navigation">
         <div class="navbar-brand ">
-            <a class="navbar-item" href="index.html">
+            <a class="navbar-item" href="index.php">
                 <img src="logobrrr.png" width="35px" height="140px">
                 <p class="tituloB"> BRRR Music</p>
             </a>
@@ -31,11 +33,14 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item" href="nosotros.html">
+              <a class="navbar-item" href="inicio.html">
+                Inicio
+              </a>
+                <a class="navbar-item" href="nosotros.php">
                     Nosotros
                 </a>
 
-                <a class="navbar-item" href="contacto.html">
+                <a class="navbar-item" href="contacto.php">
                     Contacto
                 </a>
             </div>
@@ -44,7 +49,7 @@
                 <div class="navbar-item">
                     <div class="buttons">
                         <a class="button is-dark" href="logout.php">
-                            Cerrar Sesion
+                            Cerrar sesión
                         </a>
                     </div>
                 </div>
@@ -54,58 +59,53 @@
 </header>
 
 <body>
-    <h1 class="tituloPag">Inicio</h1>
+  <h1 class="tituloPag">Inicio</h1> 
 
-    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <div id="player"></div>
-
-    <script>
-      // 2. This code loads the IFrame Player API code asynchronously.
-      var tag = document.createElement('script');
-
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '360',
-          width: '640',
-          videoId: 'M7lc1UVf-VE',
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      }
-
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
-
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      var done = false;
-      function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
-          done = true;
-        }
-      }
-      function stopVideo() {
-        player.stopVideo();
-      }
-    </script>
-
-
+    <div id="player">
+      <img src="" class="cover" id="art" />
+      <div class="trackinfo">
+          <p id="title"></p>
+          <p id="artist"></p>
+      </div>
+      <div id="track">
+          <div id="progress"></div>
+          <div id="handler"></div>
+      </div>
+      <div class="container">
+          <div class="info">
+              <div class="cont">
+                  <button id="prev" class="playIcons">
+                      <img src="https://cdn-icons-png.flaticon.com/512/4211/4211379.png" />
+                  </button>
+                  <button id="play" class="playIcons">
+                      <img class="pad" src="https://cdn-icons-png.flaticon.com/512/4211/4211344.png" />
+                  </button>
+                  <button id="next" class="playIcons">
+                      <img src="https://cdn-icons-png.flaticon.com/512/4211/4211373.png" />
+                  </button>
+              </div>
+          </div>
+      </div>
+  </div>
   
-    
-
+  <footer class="footerM" style="background-color: rgb(28, 30, 31);
+  font-size: 20px;
+  display: flex;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  margin-top: 1000px;
+  align-content: flex-end;
+  justify-content: center;
+  align-items: center; 
+">
+    <div class="content has-text-centered">
+      <p>
+        <strong style="color:white; ">BRRR Music.</strong> Todos los derechos reservados. © 
+    </div>
+  </footer>
+  
 </body>
+
+
 
 </html>
