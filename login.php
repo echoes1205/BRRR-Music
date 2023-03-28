@@ -81,17 +81,38 @@
 
 <body>
     <h1 class="tituloPag"> Inicia sesión</h1>
-	
-    <form action="login.php" method="POST">
+	<form class="hero is-fullheight" action="login.php" method="POST">
+    <div class="hero is-fullheight">
+        <div class="hero-body is-justify-content-center is-align-items-center">
+			<div class="columns is-flex is-flex-direction-column box">
+                <div class="column">
+                    <form  action="login.php" method="POST" for="email">   </form>
+                    <input class="input is-primary" name="email" type="text" placeholder="Correo">
+                </div>
+                
+                <div class="column">
+                    <form action="login.php" method="POST" for="Name">  </form>
+                    <input class="input is-primary" name="password" type="password" placeholder="Contraseña">
+                    
+                    <a href="recuperarContra.html" class="is-size-7 has-text-primary">¿No recuerdas tu contraseña?</a>
+                </div>
+                
+                <div class="column">
+                    <input type="submit" value="Submit" class="button is-primary is-fullwidth is-danger">
+                </div>
+                <div class="has-text-centered">
+                    <p class="is-size-7"> ¿No tienes una cuenta? <a href="registro.php" class="has-text-primary">Regístrate.
 
-      <input name="email" type="text" placeholder="Enter your email">
-	  
-      <input name="password" type="password" placeholder="Enter your Password">
-
-      <input type="submit" value="Submit">
-    </form>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div> 
+</form>
   
     
+
 
 </body>
 

@@ -75,17 +75,38 @@
 
 <body>
     <h1 class="tituloPag"> Registro</h1>
-	
-    <form action="signup.php" method="POST">
-      <input name="email" type="text" placeholder="Enter your email">
-      <input name="password" type="password" placeholder="Enter your Password">
-      <input name="confirm_password" type="password" placeholder="Confirm Password">
-      <input type="submit" value="Submit">
-    </form>
+	<form class="hero is-fullheight" action="signup.php" method="POST">
+	    <div class="hero is-fullheight">
+        <div class="hero-body is-justify-content-center is-align-items-center">
+            <div class="columns is-flex is-flex-direction-column box">
+                <div class="column pb-2">
+                    <form action="signup.php" method="POST" for="email"> </form>
+                    <input name="email" class="input is-primary" type="text" placeholder="Correo">
+                </div>
 
-</body>
+                <div class="column pb-2">
+                    <form action="signup.php" method="POST" for="Name"> </form>
+                    <input name="password" class="input is-primary" type="password" placeholder="Contraseña">
+                </div>
 
+                <div class="column">
+                    <form action="signup.php" method="POST" for="Name"> </form>
+                    <input name="confirm_password" class="input is-primary" type="password" placeholder="Confirmar contraseña">
+                    <a href="recuperarContra.html" class="is-size-7 has-text-primary">¿No recuerdas tu contraseña?</a>
+                </div>
 
+                <div class="column">
+                    <input type="submit" value="Submit" class="button is-primary is-fullwidth is-danger">
+                </div>
+                <div class="has-text-centered">
+                    <p class="is-size-7"> ¿Ya tienes una cuenta? <a href="login.php" class="has-text-primary">Inicia
+                            sesión. </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+	</form>
 </body>
 
 </html>
