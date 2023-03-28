@@ -72,9 +72,6 @@
                         <a class="button is-dark" href="signup.php">
                             Registro
                         </a>
-                        <a class="button is-black" href="login.php">
-                            Inicio de sesión
-                        </a>
                     </div>
                 </div>
             </div>
@@ -84,34 +81,15 @@
 
 <body>
     <h1 class="tituloPag"> Inicia sesión</h1>
-    <div class="hero is-fullheight">
-        <div class="hero-body is-justify-content-center is-align-items-center">
-            <div class="columns is-flex is-flex-direction-column box">
-                <div class="column">
-                    <label for="email">   </label>
-                    <input class="input is-primary" name="email" type="text" placeholder="Correo">
-                </div>
-                
-                <div class="column">
-                    <label for="Name">  </label>
-                    <input class="input is-primary" name="password" type="password" placeholder="Contraseña">
-                    
-                    <a href="recuperarContra.html" class="is-size-7 has-text-primary">¿No recuerdas tu contraseña?</a>
-                </div>
-                
-                <div class="column">
-                    <input class="button is-primary is-fullwidth is-danger" type="submit" value = "Submit">Iniciar</button>
-                </div>
-                <div class="has-text-centered">
-                    <p class="is-size-7"> ¿No tienes una cuenta? <a href="signup.php" class="has-text-primary">Regístrate.
+	
+    <form action="login.php" method="POST">
 
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div> 
+      <input name="email" type="text" placeholder="Enter your email">
+	  
+      <input name="password" type="password" placeholder="Enter your Password">
 
+      <input type="submit" value="Submit">
+    </form>
   
     
 

@@ -75,38 +75,13 @@
 
 <body>
     <h1 class="tituloPag"> Registro</h1>
-
-    <div class="hero is-fullheight">
-        <div class="hero-body is-justify-content-center is-align-items-center">
-            <div class="columns is-flex is-flex-direction-column box">
-                <div class="column pb-2">
-                    <label for="email"> </label>
-                    <input class="input is-primary" type="text" placeholder="Correo">
-                </div>
-
-                <div class="column pb-2">
-                    <label for="Name"> </label>
-                    <input class="input is-primary" type="password" placeholder="Contraseña">
-                </div>
-
-                <div class="column">
-                    <label for="Name"> </label>
-                    <input class="input is-primary" type="password" placeholder="Confirmar contraseña">
-                    <a href="recuperarContra.html" class="is-size-7 has-text-primary">¿No recuerdas tu contraseña?</a>
-                </div>
-
-                <div class="column">
-                    <button class="button is-primary is-fullwidth is-danger" type="submit">Registrarse</button>
-                </div>
-                <div class="has-text-centered">
-                    <p class="is-size-7"> ¿Ya tienes una cuenta? <a href="login.php" class="has-text-primary">Inicia
-                            sesión. </a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
+	
+    <form action="signup.php" method="POST">
+      <input name="email" type="text" placeholder="Enter your email">
+      <input name="password" type="password" placeholder="Enter your Password">
+      <input name="confirm_password" type="password" placeholder="Confirm Password">
+      <input type="submit" value="Submit">
+    </form>
 
 </body>
 
