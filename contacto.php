@@ -50,7 +50,7 @@ if (isset($_SESSION['user_id'])) {
             <div id="navbarBasicExample" class="navbar-menu">
                 <div class="navbar-start">
                     <a class="navbar-item" href="inicio.html">
-                        Inicio
+                        Reproductor
                     </a>
                     <a class="navbar-item" href="nosotros.php">
                         Nosotros
