@@ -63,8 +63,72 @@
 <body>
     <h1 class="tituloPag">Noticias</h1> 
 
+     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+        <p class="textoNoticia">Nuevo lanzamiento de Alexandra Savior, quien es unacantautora estadounidense, originaria de Portland, Oregon. Su álbum "The Archer" ya está disponible, y este es su primer video musical del álbum.</p>
 
-  
+        <div id="player" style="padding-top: 30px; padding-left: 235px; padding-right: 2px;"></div>
+        
+    <script>
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '540',
+          width: '1160',
+          videoId: 'UGszprHHdHA',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 6000);
+          done = true;
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+    </script>
+    
+  <br>
+  <br>
+
+  <footer class="footerM" style="background-color: rgb(28, 30, 31);
+  font-size: 20px;
+  display: flex;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  margin-top: 110px;
+  align-content: flex-end;
+  justify-content: center;
+  align-items: center; 
+">
+    <div class="content has-text-centered">
+      <p>
+        <strong style="color:white; ">BRRR Music.</strong> Todos los derechos reservados. © 
+    </div>
+  </footer>
     
 
 </body>

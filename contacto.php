@@ -27,7 +27,7 @@ if (isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
     <script defer src="script.js"></script>
-    <link href="estilos.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
 
 </head>
 
@@ -82,7 +82,8 @@ if (isset($_SESSION['user_id'])) {
     <body>
         <h1 class="tituloPag">Contacto</h1>
 
-        <p class="nosotrosTexto"> Siguenos en nuestras redes sociales para noticias y más informacion acerca de BRRR Music.
+        <p class="nosotrosTexto"> Siguenos en nuestras redes sociales para noticias y más informacion acerca de BRRR Music. 
+            <br> Dentro de nuestras redes, encontrarás nuevos lanzamientos, dinámicas, historias, y todo acerca de tu música favorita y de nuestro sitio web.   
         </p>
         <div class="redes" style="
             display: flex;
@@ -97,6 +98,22 @@ if (isset($_SESSION['user_id'])) {
             <a href="twitter.com">
                 <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" width="70px" height="280px"> </a>
         </div>
+
+        <footer class="footerM" style="background-color: rgb(28, 30, 31);
+  font-size: 20px;
+  display: flex;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  margin-top: 210px;
+  align-content: flex-end;
+  justify-content: center;
+  align-items: center; 
+">
+    <div class="content has-text-centered">
+      <p>
+        <strong style="color:white; ">BRRR Music.</strong> Todos los derechos reservados. © 
+    </div>
+  </footer>
 
     <?php else: ?>
 
@@ -140,6 +157,8 @@ if (isset($_SESSION['user_id'])) {
 
         <p class="nosotrosTexto"> Siguenos en nuestras redes sociales para noticias y más informacion acerca de BRRR
             Music.
+            <br> Dentro de nuestras redes, encontrarás nuevos lanzamientos, dinámicas, historias, y todo acerca de tu música favorita y de nuestro sitio web.   
+
         </p>
         <div class="redes" style="
             display: flex;
@@ -154,6 +173,22 @@ if (isset($_SESSION['user_id'])) {
             <a href="twitter.com">
                 <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" width="70px" height="280px"> </a>
         </div>
+
+        <footer class="footerM" style="background-color: rgb(28, 30, 31);
+  font-size: 20px;
+  display: flex;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  margin-top: 210px;
+  align-content: flex-end;
+  justify-content: center;
+  align-items: center; 
+">
+    <div class="content has-text-centered">
+      <p>
+        <strong style="color:white; ">BRRR Music.</strong> Todos los derechos reservados. © 
+    </div>
+  </footer>
     </body>
 <?php endif; ?>
 </body>

@@ -81,6 +81,21 @@ if (isset($_SESSION['user_id'])) {
     </nav>
   </header>
 
+  <div class='column is-13'>
+      <section class="hero is-danger  is-bold">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">
+              Escucha tu música favorita
+            </h1>
+            <h2 class="subtitle">
+              Bienvenido a BRRR Music.
+            </h2>
+          </div>
+        </div>
+      </section>
+    </div>
+
 
   <section class="section">
     <div class="container is-clipped">

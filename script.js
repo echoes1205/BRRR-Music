@@ -39,6 +39,8 @@ $('#switch2').click()
 
 
 
+
+
 FB.getLoginStatus(function(response) {
   statusChangeCallback(response);
 });

@@ -96,6 +96,8 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
 <body>
     <h1 class="tituloPag"> Registro</h1>
+    <br> 
+    
     <form class="hero is-fullheight" action="signup.php" method="POST">
         <div class="hero is-fullheight">
             <div class="hero-body is-justify-content-center is-align-items-center">
@@ -171,6 +173,22 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
                 </div>
             </div>
     </form>
+
+    <footer class="footerM" style="background-color: rgb(28, 30, 31);
+  font-size: 20px;
+  display: flex;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  margin-top: -100px;
+  align-content: flex-end;
+  justify-content: center;
+  align-items: center; 
+">
+    <div class="content has-text-centered">
+        <p>
+            <strong style="color:white; ">BRRR Music.</strong> Todos los derechos reservados. ©
+    </div>
+</footer>
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 
 session_start();
 
-//config.php
+// config.php
 
 //Include Google Client Library for PHP autoload file
 require_once 'vendor/autoload.php';

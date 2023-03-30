@@ -127,14 +127,17 @@ nav {
     width: 400px;
 }
 .nosotrosTexto{
-    padding-top: 35px;
-    padding-left: 30px;
-    font-size: 17px;
+    padding: 50px;
     color:white;
-
+    text-align: justify;
 }
 #redes{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+}
+
+.textoNoticia{
+    text-align: justify;
+    padding: 50px;
 }

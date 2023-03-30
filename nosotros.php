@@ -92,6 +92,12 @@ if (isset($_SESSION['user_id'])) {
     <p class="nosotrosTexto">Somos un equipo de dos desarrolladores, apasionados por la música y el software,
         buscando innovar y brindar un
         servicio de música con un concepto diferente a los demás, brindando calidad a nuestros usuarios.
+        <br>
+        <br> ¿Por qué elegimos crear este sitio? Sabemos que todos tenemos gustos musicales diferentes, y por lo tanto,
+        diferentes gustos en cuanto
+        diseños, aplicaciones y servicios. BRRR Music busca darle un nuevo concepto a la reproducción de música, que esta
+        sea de una manera más personalizada,
+        abierta y completa.
     </p>
 
 <?php else: ?>
@@ -118,7 +124,7 @@ if (isset($_SESSION['user_id'])) {
             <a class="navbar-item" href="contacto.php">
                 Contacto
             </a>
-           
+
         </div>
 
         <div class="navbar-end">
@@ -143,15 +149,31 @@ if (isset($_SESSION['user_id'])) {
         <p class="nosotrosTexto">Somos un equipo de dos desarrolladores, apasionados por la música y el software, buscando
             innovar y brindar un
             servicio de música con un concepto diferente a los demás, brindando calidad a nuestros usuarios.
+            <br>
+            <br> ¿Por qué elegimos crear este sitio? Sabemos que todos tenemos gustos musicales diferentes, y por lo tanto,
+            diferentes gustos en cuanto
+            diseños, aplicaciones y servicios. BRRR Music busca darle un nuevo concepto a la reproducción de música, que
+            esta sea de una manera más personalizada,
+            abierta y completa.
         </p>
     <?php endif; ?>
 </body>
-<!--<footer class="footer">
+
+
+<footer class="footerM" style="background-color: rgb(28, 30, 31);
+  font-size: 20px;
+  display: flex;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  margin-top: 320px;
+  align-content: flex-end;
+  justify-content: center;
+  align-items: center; 
+">
     <div class="content has-text-centered">
-      <p>
-        <strong>BRRR Music.</strong> Todos los derechos reservados. ©
-      </p>
+        <p>
+            <strong style="color:white; ">BRRR Music.</strong> Todos los derechos reservados. ©
     </div>
-  </footer> -->
+</footer>
 
 </html>
