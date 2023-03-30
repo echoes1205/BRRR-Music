@@ -66,7 +66,7 @@ if (isset($_GET["code"])) {
 
 //Ancla para iniciar sesión
 if (!isset($_SESSION['access_token'])) {
-    $login_button = '<a href="' . $google_client->createAuthUrl() . '" style=" background: #dd4b39; border-radius: 5px; color: white; display: block; font-weight: bold; padding: 20px; text-align: center; text-decoration: none; width: 200px;">Login With Google</a>';
+    $login_button = '<a href="' . $google_client->createAuthUrl() . '" style=" background: #dd4b39; border-radius: 5px; color: white; display: block; font-weight: bold; padding: 20px; text-align: center; text-decoration: none; width: 200px;">Iniciar con Google</a>';
 }
 
 
@@ -128,13 +128,7 @@ if (!isset($_SESSION['access_token'])) {
         </div>
     </nav>
 
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v16.0&appId=231528209262053&autoLogAppEvents=1"
-        nonce="8S1Wxmbl"></script>
 
-    <div class="fb-login-button" data-auto-logout-link="false" data-use-continue-as="false"></div>
-    </div>
 </header>
 
 <body>
@@ -166,45 +160,11 @@ if (!isset($_SESSION['access_token'])) {
 
                             </a>
                         </p>
+
                     </div>
 
-
-
-                    <script>
-                        window.fbAsyncInit = function () {
-                            FB.init({
-                                appId: '250447637549123',
-                                cookie: true,
-                                xfbml: true,
-                                version: 'v16.0'
-                            });
-
-                            FB.AppEvents.logPageView();
-
-                        };
-
-                        (function (d, s, id) {
-                            var js, fjs = d.getElementsByTagName(s)[0];
-                            if (d.getElementById(id)) { return; }
-                            js = d.createElement(s); js.id = id;
-                            js.src = "https://connect.facebook.net/en_US/sdk.js";
-                            fjs.parentNode.insertBefore(js, fjs);
-                        }(document, 'script', 'facebook-jssdk'));
-
-                        function onLogin() {
-                            if (response.authResponse) {
-                                FB.api('/me?fields=email,name,picture', (response) => {
-                                    console.log(response)
-                                    window.location.href = "http://localhost/musicb/BRRR-Music-main/index.php";
-                                })
-                            }
-                        }
-                    </script>
-
-
-                    <button onclick="onLogin();"> Iniciar con facebook </button>
-
-                    <div class="container">                        
+                    <br>
+                    <div class="container">
                         <div>
                             <div class="col-lg-4 offset-4">
                                 <div class="card">
@@ -223,12 +183,12 @@ if (!isset($_SESSION['access_token'])) {
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
     </form>
+
+
 
     <footer class="footerM" style="background-color: rgb(28, 30, 31);
   font-size: 20px;
@@ -240,11 +200,11 @@ if (!isset($_SESSION['access_token'])) {
   justify-content: center;
   align-items: center; 
 ">
-    <div class="content has-text-centered">
-        <p>
-            <strong style="color:white; ">BRRR Music.</strong> Todos los derechos reservados. ©
-    </div>
-</footer>
+        <div class="content has-text-centered">
+            <p>
+                <strong style="color:white; ">BRRR Music.</strong> Todos los derechos reservados. ©
+        </div>
+    </footer>
 
 
 </body>
