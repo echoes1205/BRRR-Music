@@ -118,6 +118,7 @@ if (isset($_SESSION['user_id'])) {
             <a class="navbar-item" href="contacto.php">
                 Contacto
             </a>
+           
         </div>
 
         <div class="navbar-end">

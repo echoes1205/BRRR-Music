@@ -15,6 +15,9 @@ if (isset($_SESSION['user_id'])) {
     $user = $results;
   }
 }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -206,6 +209,8 @@ if (isset($_SESSION['user_id'])) {
         </div>
       </div>
     </div>
+
+    
   </div>
   </nav>
   </header>
@@ -229,6 +234,8 @@ if (isset($_SESSION['user_id'])) {
         </div>
       </section>
     </div>
+
+
 
     <section class="section">
       <div class="container is-clipped">
@@ -318,6 +325,7 @@ if (isset($_SESSION['user_id'])) {
       </div>
     </section>
 
+    
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
@@ -325,6 +333,8 @@ if (isset($_SESSION['user_id'])) {
         </p>
       </div>
     </footer>
+
+    
   <?php endif; ?>
 </body>
 

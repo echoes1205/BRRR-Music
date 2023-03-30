@@ -58,6 +58,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
                 <a class="navbar-item" href="contacto.php">
                     Contacto
                 </a>
+               
             </div>
 
             <div class="navbar-end">
@@ -73,6 +74,23 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
                 </div>
             </div>
         </div>
+
+        
+
+
+        <!-- The JS SDK Login Button -->
+
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+        </fb:login-button>
+
+        <div id="status">
+        </div>
+
+        <!-- Load the JS SDK asynchronously -->
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+
+
     </nav>
 </header>
 
@@ -96,7 +114,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
                         <form action="signup.php" method="POST" for="Name"> </form>
                         <input name="confirm_password" class="input is-primary" type="password"
                             placeholder="Confirmar contraseña">
-                        <a href="recuperarContra.html" class="is-size-7 has-text-primary">¿No recuerdas tu
+                        <a href="recuperarContra.html" class="is-size-7" style="color: black;"> ¿No recuerdas tu
                             contraseña?</a>
                     </div>
 
@@ -109,9 +127,49 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
                                 sesión. </a>
                         </p>
                     </div>
+
+
+                    <script>
+                        window.fbAsyncInit = function () {
+                            FB.init({
+                                appId: '250447637549123',
+                                cookie: true,
+                                xfbml: true,
+                                version: 'v16.0'
+                            });
+
+                            FB.AppEvents.logPageView();
+
+                        };
+
+                        (function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id)) { return; }
+                            js = d.createElement(s); js.id = id;
+                            js.src = "https://connect.facebook.net/en_US/sdk.js";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));
+
+                        function onLogin() {
+                            if (response.authResponse) {
+                                FB.api('/me?fields=email,name,picture', (response) => {
+                                    console.log(response)
+                                    window.location.href = "http://localhost/brrr/BRRR-Music-main/inicio.html";
+
+                                })
+                            }
+                        }
+                    </script>
+
+
+                    <button action="login.php" onclick="onLogin();"> Iniciar con facebook </button>
+
+                    
+
+
+
                 </div>
             </div>
-        </div>
     </form>
 </body>
 

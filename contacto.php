@@ -82,6 +82,22 @@ if (isset($_SESSION['user_id'])) {
     <body>
         <h1 class="tituloPag">Contacto</h1>
 
+        <p class="nosotrosTexto"> Siguenos en nuestras redes sociales para noticias y más informacion acerca de BRRR Music.
+        </p>
+        <div class="redes" style="
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding-top:30px;
+        ">
+            <a href=" facebook.com">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733549.png" width="70px" height="280px"> </a>
+            <a href="instagram.com">
+                <img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" width="70px" height="280px"> </a>
+            <a href="twitter.com">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" width="70px" height="280px"> </a>
+        </div>
+
     <?php else: ?>
 
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -100,6 +116,7 @@ if (isset($_SESSION['user_id'])) {
                 <a class="navbar-item" href="contacto.php">
                     Contacto
                 </a>
+             
             </div>
 
             <div class="navbar-end">
@@ -114,8 +131,31 @@ if (isset($_SESSION['user_id'])) {
                     </div>
                 </div>
             </div>
+        </div>
+        </nav>
+        </header>
 
-        <?php endif; ?>
+
+        <h1 class="tituloPag">Contacto</h1>
+
+        <p class="nosotrosTexto"> Siguenos en nuestras redes sociales para noticias y más informacion acerca de BRRR
+            Music.
+        </p>
+        <div class="redes" style="
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding-top:30px;
+        ">
+            <a href="facebook.com">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733549.png" width="70px" height="280px"> </a>
+            <a href="instagram.com">
+                <img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" width="70px" height="280px"> </a>
+            <a href="twitter.com">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" width="70px" height="280px"> </a>
+        </div>
+    </body>
+<?php endif; ?>
 </body>
 
 </html>

@@ -1,13 +1,13 @@
 <?php
 
-  session_start();
+session_start();
 
-  if (isset($_SESSION['user_id'])) {
+if (isset($_SESSION['user_id'])) {
     header('Location: login.php');
-  }
-  require 'database.php';
+}
+require 'database.php';
 
-  if (!empty($_POST['email']) && !empty($_POST['password'])) {
+if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $records = $conn->prepare('SELECT id, email, password FROM users WHERE email = :email');
     $records->bindParam(':email', $_POST['email']);
     $records->execute();
@@ -16,12 +16,59 @@
     $message = '';
 
     if (count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
-      $_SESSION['user_id'] = $results['id'];
-      header("Location: inicio.html");
+        $_SESSION['user_id'] = $results['id'];
+        header("Location: inicio.html");
     } else {
-      $message = 'Las credenciales son inválidas';
+        $message = 'Las credenciales son inválidas';
     }
-  }
+}
+
+
+
+include('config.php');
+
+$login_button = '';
+
+if (isset($_GET["code"])) {
+
+    $token = $google_client->fetchAccessTokenWithAuthCode($_GET["code"]);
+    if (!isset($token['error'])) {
+
+        $google_client->setAccessToken($token['access_token']);
+
+        $_SESSION['access_token'] = $token['access_token'];
+
+        $google_service = new Google_Service_Oauth2($google_client);
+
+        $data = $google_service->userinfo->get();
+
+        if (!empty($data['given_name'])) {
+            $_SESSION['user_first_name'] = $data['given_name'];
+        }
+
+        if (!empty($data['family_name'])) {
+            $_SESSION['user_last_name'] = $data['family_name'];
+        }
+
+        if (!empty($data['email'])) {
+            $_SESSION['user_email_address'] = $data['email'];
+        }
+
+        if (!empty($data['gender'])) {
+            $_SESSION['user_gender'] = $data['gender'];
+        }
+
+        if (!empty($data['picture'])) {
+            $_SESSION['user_image'] = $data['picture'];
+        }
+    }
+}
+
+//Ancla para iniciar sesión
+if (!isset($_SESSION['access_token'])) {
+    $login_button = '<a href="' . $google_client->createAuthUrl() . '" style=" background: #dd4b39; border-radius: 5px; color: white; display: block; font-weight: bold; padding: 20px; text-align: center; text-decoration: none; width: 200px;">Login With Google</a>';
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -80,41 +127,109 @@
             </div>
         </div>
     </nav>
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v16.0&appId=231528209262053&autoLogAppEvents=1"
+        nonce="8S1Wxmbl"></script>
+
+    <div class="fb-login-button" data-auto-logout-link="false" data-use-continue-as="false"></div>
+    </div>
 </header>
 
 <body>
     <h1 class="tituloPag"> Inicia sesión</h1>
-	<form class="hero is-fullheight" action="login.php" method="POST">
-    <div class="hero is-fullheight">
-        <div class="hero-body is-justify-content-center is-align-items-center">
-			<div class="columns is-flex is-flex-direction-column box">
-                <div class="column">
-                    <form  action="login.php" method="POST" for="email">   </form>
-                    <input class="input is-primary" name="email" type="text" placeholder="Correo">
-                </div>
-                
-                <div class="column">
-                    <form action="login.php" method="POST" for="Name">  </form>
-                    <input class="input is-primary" name="password" type="password" placeholder="Contraseña">
-                    
-                    <a href="recuperarContra.html" class="is-size-7 has-text-primary">¿No recuerdas tu contraseña?</a>
-                </div>
-                
-                <div class="column">
-                    <input type="submit" value="Entrar" class="button is-primary is-fullwidth is-danger">
-                </div>
-                <div class="has-text-centered">
-                    <p class="is-size-7"> ¿No tienes una cuenta? <a href="signup.php" class="has-text-primary">Regístrate.
+    <form class="hero is-fullheight" action="login.php" method="POST">
+        <div class="hero is-fullheight">
+            <div class="hero-body is-justify-content-center is-align-items-center">
+                <div class="columns is-flex is-flex-direction-column box">
+                    <div class="column">
+                        <form action="login.php" method="POST" for="email"> </form>
+                        <input class="input is-primary" name="email" type="text" placeholder="Correo">
+                    </div>
 
-                        </a>
-                    </p>
+                    <div class="column">
+                        <form action="login.php" method="POST" for="Name"> </form>
+                        <input class="input is-primary" name="password" type="password" placeholder="Contraseña">
+
+                        <a href="recuperarContra.html" class="is-size-7" style="color: black;"> ¿No recuerdas tu
+                            contraseña?</a>
+                    </div>
+
+                    <div class="column">
+                        <input type="submit" value="Entrar" class="button is-primary is-fullwidth is-danger">
+                    </div>
+                    <div class="has-text-centered">
+                        <p class="is-size-7"> ¿No tienes una cuenta? <a href="signup.php"
+                                class="has-text-primary">Regístrate.
+
+                            </a>
+                        </p>
+                    </div>
+
+
+
+                    <script>
+                        window.fbAsyncInit = function () {
+                            FB.init({
+                                appId: '250447637549123',
+                                cookie: true,
+                                xfbml: true,
+                                version: 'v16.0'
+                            });
+
+                            FB.AppEvents.logPageView();
+
+                        };
+
+                        (function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id)) { return; }
+                            js = d.createElement(s); js.id = id;
+                            js.src = "https://connect.facebook.net/en_US/sdk.js";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));
+
+                        function onLogin() {
+                            if (response.authResponse) {
+                                FB.api('/me?fields=email,name,picture', (response) => {
+                                    console.log(response)
+                                    window.location.href = "http://localhost/musicb/BRRR-Music-main/index.php";
+                                })
+                            }
+                        }
+                    </script>
+
+
+                    <button onclick="onLogin();"> Iniciar con facebook </button>
+
+                    <div class="container">                        
+                        <div>
+                            <div class="col-lg-4 offset-4">
+                                <div class="card">
+                                    <?php
+                                    if ($login_button == '') {
+                                        echo '<div class="card-header">Welcome User</div><div class="card-body">';
+                                        echo '<img src="' . $_SESSION["user_image"] . '" class="rounded-circle container"/>';
+                                        echo '<h3><b>Name :</b> ' . $_SESSION['user_first_name'] . ' ' . $_SESSION['user_last_name'] . '</h3>';
+                                        echo '<h3><b>Email :</b> ' . $_SESSION['user_email_address'] . '</h3>';
+                                        echo '<h3><a href="logout.php">Logout</h3></div>';
+                                    } else {
+                                        echo '<div align="center">' . $login_button . '</div>';
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div>
-    </div> 
-</form>
-  
-    
+    </form>
+
+
 
 
 </body>

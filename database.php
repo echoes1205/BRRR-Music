@@ -2,8 +2,8 @@
 
 $server = 'localhost';
 $username = 'root';
-$password = 'toringo12';
-$database = 'registroB';
+$password = '';
+$database = '';
 
 try {
   $conn = new PDO("mysql:host=$server;dbname=$database;", $username, $password);

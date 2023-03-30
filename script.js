@@ -37,3 +37,14 @@ $('#switch2').click()
 },3000)
 
 
+
+
+FB.getLoginStatus(function(response) {
+  statusChangeCallback(response);
+});
+
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
