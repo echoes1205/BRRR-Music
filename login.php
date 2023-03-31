@@ -19,7 +19,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
         $_SESSION['user_id'] = $results['id'];
         header("Location: inicio.html");
     } else {
-        $message = 'Las credenciales son inválidas';
+        echo = 'Usuario o contraseña incorrectas';
     }
 }
 
