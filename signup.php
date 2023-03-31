@@ -12,9 +12,9 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $stmt->bindParam(':password', $password);
 
     if ($stmt->execute()) {
-        $message = 'Usuario creado exitosamente';
+        echo  'Usuario creado exitosamente';
     } else {
-        $message = 'Hubo un problema';
+        echo  'Hubo un problema';
     }
 }
 ?>
