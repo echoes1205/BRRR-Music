@@ -162,7 +162,9 @@ if (!isset($_SESSION['access_token'])) {
                         </p>
 
                     </div>
-
+                    <div class="column" id="register-message" >
+                    <input onclick="onLogin();" value="Facebook" class="button is-primary is-fullwidth is-danger">
+                </div>
                     <br>
                     <div class="container">
                         <div>
@@ -206,7 +208,42 @@ if (!isset($_SESSION['access_token'])) {
         </div>
     </footer>
 
+ 	<div id="fb-root"></div>
+<script>
+	window.fbAsyncInit = function() {
+	  FB.init({
+		appId      : '208284301820830',
+		cookie     : true,
+		xfbml      : true,
+		version    : 'v16.0'
+	  });
+		
+	  FB.AppEvents.logPageView();   
+		
+	};
+  
+	(function(d, s, id){
+	   var js, fjs = d.getElementsByTagName(s)[0];
+	   if (d.getElementById(id)) {return;}
+	   js = d.createElement(s); js.id = id;
+	   js.src = "https://connect.facebook.net/en_US/sdk.js";
+	   fjs.parentNode.insertBefore(js, fjs);
+	 }(document, 'script', 'facebook-jssdk'));
+	 function onLogin(){
+		FB.login((response)=>{
+			if(response.authResponse){
+				FB.api('/me',(response)=>{
+					console.log(response)
+					window.location.href = "http://localhost/BRRR-Music-main/inicio.html";
 
+				})
+			}
+		})
+	 }
+
+
+  </script> 
+    
 </body>
 
 
