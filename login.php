@@ -122,6 +122,12 @@ if (!isset($_SESSION['access_token'])) {
                         <a class="button is-black" href="login.php">
                             Inicio de sesión
                         </a>
+                        <a class="button is-black">
+                            Modo Hot
+                        </a>
+                        <a class="button is-black">
+                            Modo Ice Cream
+                        </a>
                     </div>
                 </div>
             </div>
