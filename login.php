@@ -91,7 +91,7 @@ if (!isset($_SESSION['access_token'])) {
         <div class="navbar-brand ">
             <a class="navbar-item" href="index.php">
                 <img src="logobrrr.png" width="35px" height="140px">
-                <p class="tituloB"> BRRR Music</p>
+                <p class="tituloB"> BRRR Music_Fadul_Pag_ Final_Proyect</p>
             </a>
 
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
